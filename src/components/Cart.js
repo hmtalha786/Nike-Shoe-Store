@@ -80,41 +80,25 @@ const Cart = () => {
   const navigate = useNavigate();
   const classes = useStyles();
 
-  const {
-    items,
-    deleteItem,
-    increaseItem,
-    decreaseItem,
-    checkout,
-  } = useContext(CartContext);
+  const { items, deleteItem, increaseItem, decreaseItem, checkout } = useContext(CartContext);
 
   const handleDecrease = (event) => {
     let equalOne = false;
     for (let i = 0; i < items.length; i++) {
-      if (items[i].productID === event && items[i].quantity === 1) {
-        equalOne = true;
-      }
+      if (items[i].productID === event && items[i].quantity === 1) { equalOne = true;}
     }
 
-    if (equalOne) {
-      deleteItem(event);
-    } else {
-      decreaseItem(event);
-    }
+    if (equalOne) { deleteItem(event);} else { decreaseItem(event);}
     setReRender(!reRender);
   };
 
   const totalAmount = () => {
     let amount = 0;
-    for (let i = 0; i < items.length; i++) {
-      amount = amount + data[items[i].productID].price * items[i].quantity;
-    }
+    for (let i = 0; i < items.length; i++) { amount = amount + data[items[i].productID].price * items[i].quantity;}
     return amount;
   };
 
-  if (totalAmount() === 0) {
-    return <h1 className={classes.empty}>Empty!</h1>;
-  }
+  if (totalAmount() === 0) { return <h1 className={classes.empty}>Empty!</h1>;}
   return (
     <div className={"cartRoot"}>
       <div className={classes.root}>
@@ -160,9 +144,7 @@ const Cart = () => {
             })}
           </Grid>
         </ul>
-
         <h3 className={classes.total}>Total - ${totalAmount()}</h3>
-
         <Button className={classes.checkout}
           variant="outlined" color="secondary"
           onClick={() => { checkout(); navigate("/"); setReRender(!reRender); }}>

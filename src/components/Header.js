@@ -39,10 +39,7 @@ export default function Header() {
   const navigate = useNavigate();
   const { items } = useContext(CartContext);
   const cartItems = () => {
-    if (items.length > 0) {
-      return items.length;
-    }
-  };
+    if (items.length > 0) {return items.length;}};
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
