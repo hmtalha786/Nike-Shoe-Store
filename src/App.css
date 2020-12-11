@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+body {
+  margin: 0;
+  background-color: rgb(252, 252, 252);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: "Ubuntu", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 480px) {
+  .cartRoot {
+    width: 100%;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 500px) {
+  .imgLoad {
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+  .imgLoad {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .imgLoad {
+    height: 340px;
+  }
+  .imgLoadP {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .imgLoadP {
+    height: 150px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .imgLoadP {
+    height: 180px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .imgLoadP {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .imgLoadP {
+    height: 220px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .imgLoadP {
+    height: 180px;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .imgLoadP {
+    height: 230px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .imgLoadP {
+    height: 270px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .imgLoadP {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .cartRoot {
+    width: 50%;
+    margin: auto;
+  }
+  .imgLoad {
+    height: 400px;
   }
 }
