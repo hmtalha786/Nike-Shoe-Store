@@ -52,8 +52,8 @@ export default function Header() {
               onClick={() => navigate("/")}
               className={classes.logo}
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/300px-Logo_NIKE.svg.png"
-              width="80px"
-              height="25px"
+              width="70px"
+              height="20px"
               alt="Adidas"
             />
           </Typography>
@@ -62,9 +62,6 @@ export default function Header() {
           </Button>
           <Button className={classes.button} onClick={() => navigate("Products")}>
             <strong>Products</strong>
-          </Button>
-          <Button className={classes.button} >
-            <strong>Sale</strong>
           </Button>
           <Button className={classes.button} >
             <strong>Limited Edition</strong>
@@ -77,6 +74,9 @@ export default function Header() {
           </Button>
           <Button className={classes.button} >
             <strong>Kids</strong>
+          </Button>
+          <Button className={classes.button} >
+            <strong>Sale</strong>
           </Button>
           <Button className={classes.button} >
             <strong>Login / Register</strong>
