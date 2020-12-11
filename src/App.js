@@ -90,6 +90,7 @@ function App() {
               <Route path="/" element={<ProductList />}/>
               <Route path=":productID" element={<ProductDetails />}/>
             </Route>
+            <Route path="Login" element={<Login />}/>
             <Route path="Cart" element={<Cart />}/>
             <Route path="*" element={<NotFound />}/>
           </Routes>

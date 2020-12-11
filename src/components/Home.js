@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   img: {
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "50px",
+    marginTop: "30px",
     maxWidth: "70%"
   },
   title: {
