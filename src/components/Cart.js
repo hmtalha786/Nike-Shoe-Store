@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../CartContext";
-import { dataContext } from "../DataContext";
+import { DataContext } from "../DataContext";
 
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Cart = () => {
   const [reRender, setReRender] = useState(false);
-  const data = useContext(dataContext);
+  const data = useContext(DataContext);
   const navigate = useNavigate();
   const classes = useStyles();
 

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Carousel from "react-material-ui-carousel";
-import { dataContext } from "../DataContext";
+import { DataContext } from "../DataContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Home = (props) => {
-  const data = useContext(dataContext);
+  const data = useContext(DataContext);
   const classes = useStyles();
   const navigate = useNavigate();
 

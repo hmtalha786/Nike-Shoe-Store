@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { dataContext } from "../DataContext";
+import { DataContext } from "../DataContext";
 import { CartContext } from "../CartContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductList = () => {
-  const data = useContext(dataContext);
+  const data = useContext(DataContext);
   const classes = useStyles();
   const { addItem, items } = useContext(CartContext);
 

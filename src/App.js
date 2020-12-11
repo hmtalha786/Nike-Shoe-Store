@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Home, Header, Products, ProductDetails, ProductList, Cart, Footer} from './components/ComponentExporter';
 import { img1, img2, img3, img4, img5, img6, img1b, img2b, img3b, img4b, img5b, img6b } from './images/ImageExporter'
-import { dataContext } from "./DataContext";
+import { DataContext } from "./DataContext";
 import { CartProvider } from "./CartContext";
 
 function App() {
@@ -62,7 +62,7 @@ function App() {
   return (
     <div>
       <CartProvider>
-        <dataContext.Provider value={dataState}>
+        <DataContext.Provider value={dataState}>
           <Header />
           <Routes>
             <Route path="/" element={<Home />}/>
@@ -74,7 +74,7 @@ function App() {
             <Route path="*" element={<NotFound />}/>
           </Routes>
           <Footer />
-        </dataContext.Provider>
+        </DataContext.Provider>
       </CartProvider>
     </div>
   );
