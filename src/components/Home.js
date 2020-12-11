@@ -29,6 +29,12 @@ const useStyles = makeStyles((theme) => ({
   image: {
     maxWidth: "100%",
   },
+  img: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: "50px",
+    maxWidth: "70%"
+  },
   title: {
     fontWeight: 600,
     fontSize: 60,
@@ -57,12 +63,18 @@ const Home = (props) => {
   return (
     <div className={classes.root}>
       <Carousel className={classes.corousal}>
-        {Object.entries(data).map(([productID, { name, img2 }]) => {
+        {Object.entries(data).map(([productID, { name, img, img2 }]) => {
           return (
             <li key={productID} className={classes.list}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={5}>
-                  <Paper className={classes.paper}><h1>{name}</h1><p>{data[productID].detail}</p></Paper>
+                  <Paper className={classes.paper}>
+                    <h1>{name}</h1>
+                    <p>{data[productID].detail}</p>
+                    <div className={classes.img}>
+                      <img className={classes.image} src={img} alt={name} />
+                    </div>
+                  </Paper>
                 </Grid>
                 <Grid item xs={12} sm={7}>
                   <Paper className={classes.paper}>
@@ -80,7 +92,7 @@ const Home = (props) => {
 
       <div className={classes.div}>
         <span onClick={() => { navigate("products"); }} className={classes.title}>
-          Best Sellings
+          Our Best Sellings
         </span>
         <div className={classes.root}>
           {Object.entries(data).map(([productID, { name, img2 }]) => {

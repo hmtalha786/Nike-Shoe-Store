@@ -48,13 +48,9 @@ export default function Header() {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <img
-              onClick={() => navigate("/")}
-              className={classes.logo}
+            <img onClick={() => navigate("/")} className={classes.logo}
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/300px-Logo_NIKE.svg.png"
-              width="70px"
-              height="20px"
-              alt="Adidas"
+              width="70px" height="20px" alt="Adidas"
             />
           </Typography>
           <Button className={classes.button} onClick={() => navigate("/")}>
@@ -63,22 +59,22 @@ export default function Header() {
           <Button className={classes.button} onClick={() => navigate("Products")}>
             <strong>Products</strong>
           </Button>
-          <Button className={classes.button} >
+          <Button className={classes.button} onClick={() => navigate("LimitedEdition")}>
             <strong>Limited Edition</strong>
           </Button>
-          <Button className={classes.button} >
+          <Button className={classes.button} onClick={() => navigate("Men")}>
             <strong>Men</strong>
           </Button>
-          <Button className={classes.button} >
+          <Button className={classes.button} onClick={() => navigate("Women")}>
             <strong>Women</strong>
           </Button>
-          <Button className={classes.button} >
+          <Button className={classes.button} onClick={() => navigate("Kids")}>
             <strong>Kids</strong>
           </Button>
-          <Button className={classes.button} >
+          <Button className={classes.button} onClick={() => navigate("Sale")}>
             <strong>Sale</strong>
           </Button>
-          <Button className={classes.button} >
+          <Button className={classes.button} onClick={() => navigate("Login")}>
             <strong>Login / Register</strong>
           </Button>
           <Button className={classes.button} onClick={() => navigate("Cart")}>
