@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundColor: "rgb(255,255,255)",
     borderTop: "1px solid rgb(235, 235, 224)",
-    color: "black",
+    color: "Gray",
   }
 }));
 

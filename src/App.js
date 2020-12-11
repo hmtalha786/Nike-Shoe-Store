@@ -1,11 +1,12 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Home, Header, Products, LimitedEdition, Men, Women, Kids, Sale, Login, ProductDetails, ProductList, Cart, Footer} from './components/ComponentExporter';
 import { img1, img2, img3, img4, img5, img6, img1b, img2b, img3b, img4b, img5b, img6b } from './images/ImageExporter'
 import { DataContext } from "./DataContext";
 import { CartProvider } from "./CartContext";
+import "./App.css";
 
-function App() {
+export default function App() {
+  const NotFound = () => <h4> Oops! Page not found </h4>;
   const dataState = {
     "1": {
       name: "Nike Blazer Mid '77",
@@ -56,9 +57,6 @@ function App() {
         "The Nike React Phantom Run Flyknit 2 offers versatility for the everyday runner. Building on the foundation of its predecessor.",
     },
   };
-
-  const NotFound = () => <h4> Oops! Page not found </h4>;
-
   return (
     <div>
       <CartProvider>
@@ -101,4 +99,3 @@ function App() {
   );
 }
 
-export default App;
