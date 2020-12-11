@@ -56,7 +56,7 @@ const ProductList = () => {
 
   return (
     <div className={classes.root}>
-      <h1 className={classes.heading}>Available Products</h1>
+      <h1 className={classes.heading}>Men`s Collection</h1>
       <ul className={classes.ul}>
         <Grid container spacing={3} className={classes.grid}>
           {Object.entries(data).map(([productID, { name, img2, price }]) => {
