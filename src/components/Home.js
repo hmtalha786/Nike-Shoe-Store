@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     listStyleType: "none",
   },
   div: {
-    marginTop: 60,
+    marginTop: 70,
     marginBottom: 70,
     fontStyle: "italic",
   },
@@ -80,7 +80,7 @@ const Home = (props) => {
 
       <div className={classes.div}>
         <span onClick={() => { navigate("products"); }} className={classes.title}>
-          Flash Sale
+          Best Sellings
         </span>
         <div className={classes.root}>
           {Object.entries(data).map(([productID, { name, img2 }]) => {

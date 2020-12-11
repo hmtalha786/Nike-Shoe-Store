@@ -63,22 +63,22 @@ export default function Header() {
           <Button className={classes.button} onClick={() => navigate("Products")}>
             <strong>Products</strong>
           </Button>
-          <Button className={classes.button} onClick={() => navigate("Men")}>
-            <strong>Men</strong>
-          </Button>
-          <Button className={classes.button} onClick={() => navigate("Women")}>
-            <strong>Women</strong>
-          </Button>
-          <Button className={classes.button} onClick={() => navigate("Kids")}>
-            <strong>Kids</strong>
-          </Button>
-          <Button className={classes.button} onClick={() => navigate("LimitedEdition")}>
-            <strong>Limited Edition</strong>
-          </Button>
-          <Button className={classes.button} onClick={() => navigate("Sale")}>
+          <Button className={classes.button} >
             <strong>Sale</strong>
           </Button>
-          <Button className={classes.button} onClick={() => navigate("Login/Register")}>
+          <Button className={classes.button} >
+            <strong>Limited Edition</strong>
+          </Button>
+          <Button className={classes.button} >
+            <strong>Men</strong>
+          </Button>
+          <Button className={classes.button} >
+            <strong>Women</strong>
+          </Button>
+          <Button className={classes.button} >
+            <strong>Kids</strong>
+          </Button>
+          <Button className={classes.button} >
             <strong>Login / Register</strong>
           </Button>
           <Button className={classes.button} onClick={() => navigate("Cart")}>
