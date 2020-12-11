@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { dataContext } from "../DataContext";
 import { CartContext } from "../CartContext";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 

@@ -165,7 +165,7 @@ const Cart = () => {
 
         <h3 className={classes.total}>Total - ${totalAmount()}</h3>
 
-        <Button variant="outlined" className={classes.checkout}
+        <Button className={classes.checkout}
           variant="outlined" color="secondary"
           onClick={() => { checkout(); navigate("/"); setReRender(!reRender); }}>
           Checkout
