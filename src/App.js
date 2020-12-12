@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, Header, Products, LimitedEdition, Men, Women, Kids, Sale, Login, ProductDetails, ProductList, Cart, Footer} from './components/ComponentExporter';
+import {Header, Home, Login, Cart, Footer, Products, ProductDetails, ProductList, LimitedEdition, LECollection, Men, MenCollection, Women, WomenCollection, Kids, KidsCollection, Sale, SaleCollection } from './components/ComponentExporter';
 import { img1, img2, img3, img4, img5, img6, img1b, img2b, img3b, img4b, img5b, img6b } from './images/ImageExporter'
 import { DataContext } from "./DataContext";
 import { CartProvider } from "./CartContext";
@@ -63,34 +63,34 @@ export default function App() {
         <DataContext.Provider value={dataState}>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />}/>
+            <Route path="/" element={<Home />} />
             <Route path="Products" element={<Products />}>
-              <Route path="/" element={<ProductList />}/>
-              <Route path=":productID" element={<ProductDetails />}/>
+              <Route path="/" element={<ProductList />} />
+              <Route path=":productID" element={<ProductDetails />} />
             </Route>
             <Route path="LimitedEdition" element={<LimitedEdition />}>
-              <Route path="/" element={<ProductList />}/>
-              <Route path=":productID" element={<ProductDetails />}/>
+              <Route path="/" element={<LECollection />} />
+              <Route path=":productID" element={<ProductDetails />} />
             </Route>
             <Route path="Men" element={<Men />}>
-              <Route path="/" element={<ProductList />}/>
-              <Route path=":productID" element={<ProductDetails />}/>
+              <Route path="/" element={<MenCollection />} />
+              <Route path=":productID" element={<ProductDetails />} />
             </Route>
             <Route path="Women" element={<Women />}>
-              <Route path="/" element={<ProductList />}/>
-              <Route path=":productID" element={<ProductDetails />}/>
+              <Route path="/" element={<WomenCollection />} />
+              <Route path=":productID" element={<ProductDetails />} />
             </Route>
             <Route path="Kids" element={<Kids />}>
-              <Route path="/" element={<ProductList />}/>
-              <Route path=":productID" element={<ProductDetails />}/>
+              <Route path="/" element={<KidsCollection />} />
+              <Route path=":productID" element={<ProductDetails />} />
             </Route>
             <Route path="Sale" element={<Sale />}>
-              <Route path="/" element={<ProductList />}/>
-              <Route path=":productID" element={<ProductDetails />}/>
+              <Route path="/" element={<SaleCollection />} />
+              <Route path=":productID" element={<ProductDetails />} />
             </Route>
-            <Route path="Login" element={<Login />}/>
-            <Route path="Cart" element={<Cart />}/>
-            <Route path="*" element={<NotFound />}/>
+            <Route path="Login" element={<Login />} />
+            <Route path="Cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </DataContext.Provider>
