@@ -7,6 +7,6 @@ const Products = () => {
       <Outlet />
     </div>
   );
-}
+};
 
 export default Products;

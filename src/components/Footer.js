@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgb(255,255,255)",
     borderTop: "1px solid rgb(235, 235, 224)",
     color: "Gray",
-  }
+  },
 }));
 
 const Footer = () => {
@@ -21,7 +21,8 @@ const Footer = () => {
     <div className={classes.root}>
       <footer>
         <h6>
-          USA | Data settings | Do not sell my personal information | Privacy Policy | Terms and Conditions | © 2020 adidas America Inc.
+          USA | Data settings | Do not sell my personal information | Privacy
+          Policy | Terms and Conditions | © 2020 adidas America Inc.
         </h6>
       </footer>
     </div>

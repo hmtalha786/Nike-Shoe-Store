@@ -1,17 +1,18 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../CartContext";
-import { DataContext } from "../DataContext";
+import { CartContext } from "../Context/CartContext";
+import { DataContext } from "../Context/DataContext";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    marginTop: 100,
     marginBottom: 70,
     textAlign: "center",
   },
@@ -51,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: 60,
     opacity: 0.6,
-    marginBottom: 20,
-    marginTop: 50,
+    marginBottom: 30,
+    marginTop: 100,
     textAlign: "center",
   },
   count: {
@@ -76,29 +77,40 @@ const useStyles = makeStyles((theme) => ({
 
 const Cart = () => {
   const [reRender, setReRender] = useState(false);
-  const data = useContext(DataContext);
+  const { dataState } = useContext(DataContext);
   const navigate = useNavigate();
   const classes = useStyles();
 
-  const { items, deleteItem, increaseItem, decreaseItem, checkout } = useContext(CartContext);
+  const { items, deleteItem, increaseItem, decreaseItem, checkout } =
+    useContext(CartContext);
 
   const handleDecrease = (event) => {
     let equalOne = false;
     for (let i = 0; i < items.length; i++) {
-      if (items[i].productID === event && items[i].quantity === 1) { equalOne = true;}
+      if (items[i].productID === event && items[i].quantity === 1) {
+        equalOne = true;
+      }
     }
 
-    if (equalOne) { deleteItem(event);} else { decreaseItem(event);}
+    if (equalOne) {
+      deleteItem(event);
+    } else {
+      decreaseItem(event);
+    }
     setReRender(!reRender);
   };
 
   const totalAmount = () => {
     let amount = 0;
-    for (let i = 0; i < items.length; i++) { amount = amount + data[items[i].productID].price * items[i].quantity;}
+    for (let i = 0; i < items.length; i++) {
+      amount = amount + dataState[items[i].productID].price * items[i].quantity;
+    }
     return amount;
   };
 
-  if (totalAmount() === 0) { return <h1 className={classes.empty}>Empty!</h1>;}
+  if (totalAmount() === 0) {
+    return <h1 className={classes.empty}>Empty!</h1>;
+  }
   return (
     <div className={"cartRoot"}>
       <div className={classes.root}>
@@ -111,30 +123,85 @@ const Cart = () => {
                   <li key={itemObj.productID} className={classes.list}>
                     <Paper className={classes.paper}>
                       <div className={classes.content}>
-                        <span className={classes.item}> {data[itemObj.productID].name} </span>
-                        <span><img src={data[itemObj.productID].img2} alt={""} className={classes.img} /></span>
-                        <span className={classes.item}> ${data[itemObj.productID].price} </span>
                         <span className={classes.item}>
-                          <Button className={classes.button}
-                            style={{ maxWidth: "20px", maxHeight: "20px", minWidth: "20px", minHeight: "20px", }}
-                            variant="outlined" color="primary"
-                            onClick={() => { increaseItem(itemObj.productID); setReRender(!reRender); }}><AddIcon />
+                          {" "}
+                          {dataState[itemObj.productID].name}{" "}
+                        </span>
+                        <span>
+                          <img
+                            src={dataState[itemObj.productID].img2}
+                            alt={""}
+                            className={classes.img}
+                          />
+                        </span>
+                        <span className={classes.item}>
+                          {" "}
+                          ${dataState[itemObj.productID].price}{" "}
+                        </span>
+                        <span className={classes.item}>
+                          <Button
+                            className={classes.button}
+                            style={{
+                              maxWidth: "20px",
+                              maxHeight: "20px",
+                              minWidth: "20px",
+                              minHeight: "20px",
+                            }}
+                            variant="outlined"
+                            color="primary"
+                            onClick={() => {
+                              increaseItem(itemObj.productID);
+                              setReRender(!reRender);
+                            }}
+                          >
+                            <AddIcon />
                           </Button>
-                          <Button className={classes.button}
-                            style={{ maxWidth: "20px", maxHeight: "20px", minWidth: "20px", minHeight: "20px", }}>
-                            {" "}{itemObj.quantity}{" "}
+                          <Button
+                            className={classes.button}
+                            style={{
+                              maxWidth: "20px",
+                              maxHeight: "20px",
+                              minWidth: "20px",
+                              minHeight: "20px",
+                            }}
+                          >
+                            {" "}
+                            {itemObj.quantity}{" "}
                           </Button>
-                          <Button className={classes.button}
-                            style={{ maxWidth: "20px", maxHeight: "20px", minWidth: "20px", minHeight: "20px", }}
-                            variant="outlined" color="primary"
-                            onClick={() => handleDecrease(itemObj.productID)}><RemoveIcon />
+                          <Button
+                            className={classes.button}
+                            style={{
+                              maxWidth: "20px",
+                              maxHeight: "20px",
+                              minWidth: "20px",
+                              minHeight: "20px",
+                            }}
+                            variant="outlined"
+                            color="primary"
+                            onClick={() => handleDecrease(itemObj.productID)}
+                          >
+                            <RemoveIcon />
                           </Button>
                         </span>
                         <span className={classes.item}>
-                          <Button className={classes.button}
-                            style={{ maxWidth: "20px", maxHeight: "20px", minWidth: "20px", minHeight: "10px", }}
-                            variant="outlined" color="secondary"
-                            onClick={() => { deleteItem(itemObj.productID); setReRender(!reRender); }}> x </Button>
+                          <Button
+                            className={classes.button}
+                            style={{
+                              maxWidth: "20px",
+                              maxHeight: "20px",
+                              minWidth: "20px",
+                              minHeight: "10px",
+                            }}
+                            variant="outlined"
+                            color="secondary"
+                            onClick={() => {
+                              deleteItem(itemObj.productID);
+                              setReRender(!reRender);
+                            }}
+                          >
+                            {" "}
+                            x{" "}
+                          </Button>
                         </span>
                       </div>
                     </Paper>
@@ -145,9 +212,16 @@ const Cart = () => {
           </Grid>
         </ul>
         <h3 className={classes.total}>Total - ${totalAmount()}</h3>
-        <Button className={classes.checkout}
-          variant="outlined" color="secondary"
-          onClick={() => { checkout(); navigate("/"); setReRender(!reRender); }}>
+        <Button
+          className={classes.checkout}
+          variant="outlined"
+          color="secondary"
+          onClick={() => {
+            checkout();
+            navigate("/");
+            setReRender(!reRender);
+          }}
+        >
           Checkout
         </Button>
       </div>

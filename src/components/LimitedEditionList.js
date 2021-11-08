@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     textAlign: "center",
-    marginBottom: 50,
     marginTop: 100,
+    marginBottom: 50,
     maxWidth: "100%",
   },
   list: {
@@ -39,10 +39,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductList = () => {
+const LimitedEditionList = () => {
   const { dataState } = useContext(DataContext);
-  const { addItem, items } = useContext(CartContext);
   const classes = useStyles();
+  const { addItem, items } = useContext(CartContext);
 
   const handleAddition = (event) => {
     if (!items.find((item) => item.productID === event)) {
@@ -56,18 +56,18 @@ const ProductList = () => {
 
   return (
     <div className={classes.root}>
-      <h1 className={classes.heading}>Available Products</h1>
+      <h1 className={classes.heading}>Limited Edition</h1>
       <ul className={classes.ul}>
         <Grid container spacing={3} className={classes.grid}>
           {Object.entries(dataState).map(
-            ([productID, { name, img2, price }]) => {
+            ([productID, { name, img, price }]) => {
               return (
                 <Grid item xs={12} sm={6} md={4}>
                   <li key={productID} className={classes.list}>
                     <Link to={productID} className={classes.link}>
                       <h3>{name}</h3>
                       <h3>${price}</h3>
-                      <img className={classes.img} src={img2} alt={name} />
+                      <img className={classes.img} src={img} alt={name} />
                     </Link>
                     <Button
                       className={classes.button}
@@ -90,4 +90,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default LimitedEditionList;
