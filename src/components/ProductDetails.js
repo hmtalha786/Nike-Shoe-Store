@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductDetails = () => {
+  const { productID } = useParams();
   const { dataState } = useContext(DataContext);
   const { addItem, items } = useContext(CartContext);
   const classes = useStyles();
@@ -38,7 +39,6 @@ const ProductDetails = () => {
     }
   };
 
-  const { productID } = useParams();
   return (
     <div className={classes.root}>
       <Grid container spacing={0} className={classes.grid}>

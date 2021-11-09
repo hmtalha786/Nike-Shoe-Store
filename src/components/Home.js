@@ -26,17 +26,14 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "light",
     color: "rgb(89, 89, 89)",
   },
-  image: {
-    maxWidth: "100%",
-  },
-  sample: {
-    maxWidth: "50%",
-  },
   img: {
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "30px",
     maxWidth: "70%",
+  },
+  image: {
+    maxWidth: "100%",
   },
   title: {
     fontWeight: 600,
@@ -48,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
       opacity: 1,
     },
+  },
+  sample: {
+    maxWidth: "50%",
   },
   list: {
     listStyleType: "none",

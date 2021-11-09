@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     listStyleType: "none",
   },
   link: {
+    marginLeft: theme.spacing(2),
     color: theme.palette.text.secondary,
     textDecoration: "none",
   },
@@ -41,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
 
 const LimitedEditionList = () => {
   const { dataState } = useContext(DataContext);
-  const classes = useStyles();
   const { addItem, items } = useContext(CartContext);
+  const classes = useStyles();
 
   const handleAddition = (event) => {
     if (!items.find((item) => item.productID === event)) {
@@ -64,11 +65,9 @@ const LimitedEditionList = () => {
               return (
                 <Grid item xs={12} sm={6} md={4}>
                   <li key={productID} className={classes.list}>
-                    <Link to={productID} className={classes.link}>
-                      <h3>{name}</h3>
-                      <h3>${price}</h3>
-                      <img className={classes.img} src={img} alt={name} />
-                    </Link>
+                    <h3>{name}</h3>
+                    <h3>${price}</h3>
+                    <img className={classes.img} src={img} alt={name} />
                     <Button
                       className={classes.button}
                       onClick={() => handleAddition(productID)}
@@ -77,6 +76,15 @@ const LimitedEditionList = () => {
                     >
                       Add to Cart
                     </Button>
+                    <Link to={productID} className={classes.link}>
+                      <Button
+                        onClick={() => handleAddition(productID)}
+                        variant="outlined"
+                        color="secondary"
+                      >
+                        Details
+                      </Button>
+                    </Link>
                   </li>
                   <br />
                   <br />
